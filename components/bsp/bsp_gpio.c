@@ -14,13 +14,16 @@ void Gpio_Init(){
     gpio_reset_pin(EXAMPLE_PIN_NUM_LCD_CS);//重置引脚
     gpio_set_direction(EXAMPLE_PIN_NUM_LCD_CS, GPIO_MODE_OUTPUT);//输出模式
     
-    // gpio_reset_pin(EXAMPLE_PIN_NUM_SCLK);//重置引脚
-    // gpio_set_direction(EXAMPLE_PIN_NUM_SCLK, GPIO_MODE_OUTPUT);//输出模式
-    // gpio_reset_pin(EXAMPLE_PIN_NUM_MOSI);//重置引脚
-    // gpio_set_direction(EXAMPLE_PIN_NUM_MOSI, GPIO_MODE_OUTPUT);//输出模式
-    // gpio_reset_pin(EXAMPLE_PIN_NUM_MISO);//重置引脚
-    // gpio_set_direction(EXAMPLE_PIN_NUM_MISO, GPIO_MODE_OUTPUT);//输出模式
+    gpio_reset_pin(EXAMPLE_PIN_NUM_SCLK);//重置引脚
+    gpio_set_direction(EXAMPLE_PIN_NUM_SCLK, GPIO_MODE_OUTPUT);//输出模式
+    gpio_reset_pin(EXAMPLE_PIN_NUM_MOSI);//重置引脚
+    gpio_set_direction(EXAMPLE_PIN_NUM_MOSI, GPIO_MODE_OUTPUT);//输出模式
+    gpio_reset_pin(EXAMPLE_PIN_NUM_MISO);//重置引脚
+    gpio_set_direction(EXAMPLE_PIN_NUM_MISO, GPIO_MODE_OUTPUT);//输出模式
 
     gpio_reset_pin(EXAMPLE_PIN_NUM_BK_LIGHT);//重置引脚
     gpio_set_direction(EXAMPLE_PIN_NUM_BK_LIGHT, GPIO_MODE_OUTPUT);//输出模式
+
+    gpio_reset_pin(EXAMPLE_PIN_NUM_LCD_RST);//重置引脚
+    gpio_set_direction(EXAMPLE_PIN_NUM_LCD_RST, GPIO_MODE_OUTPUT);//输出模式
 }

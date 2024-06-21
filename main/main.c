@@ -9,10 +9,12 @@ void LCD_task(void* pvParam)
 {
     while (1)
     {
-        //Lcd_SetRegion(1,1, 70, 70);
-        //WriteData_16bit(0x001f);
         uint8_t key[32]={0xff};
-        write_gbk_16(5,5,0x001f,key);
+        for(int i=0;i<=96;i+=16){
+            for(int j=0;j<=144;j+=16){
+                write_gbk_16(i,j,0x5f01,key);
+            }
+        }
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
 }
@@ -31,8 +33,8 @@ void LED_task(void* pvParam)
 void app_main(void)
 {
     Gpio_Init();
-    spi_init();
-    
+    AMOLED_Init();
+    //Lcd_Init();
     xTaskCreate(LCD_task, "LCD_task", 1024, NULL, 1, NULL);
     xTaskCreate(LED_task, "LED_task", 1024, NULL, 1, NULL);
         

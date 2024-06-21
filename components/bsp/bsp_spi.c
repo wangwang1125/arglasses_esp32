@@ -26,28 +26,28 @@ void spi_init(){
 }
 
 void Spi_send_data(uint8_t dat){
-    uint8_t buff[1];
-	buff[0]=dat;
-	spi_transaction_t transcnf={
-		.length=1*8,
-		.tx_buffer=buff,
-	};
-    spi_device_polling_transmit(spi2_handle,&transcnf);
+    // uint8_t buff[1];
+	// buff[0]=dat;
+	// spi_transaction_t transcnf={
+	// 	.length=1*8,
+	// 	.tx_buffer=buff,
+	// };
+    // spi_device_polling_transmit(spi2_handle,&transcnf);
 
 
-    // uint8_t i=0;
-    // for(i=0;i<8;i++){
-    //     SCLK_low;
-    //     if(dat&0x80){
-    //         MOSI_high;
-    //     }
-    //     else{
-    //         MOSI_low;
-    //     }
-    //     SCLK_high;
+    uint8_t i=0;
+    for(i=0;i<8;i++){
+        SCLK_low;
+        if(dat&0x80){
+            MOSI_high;
+        }
+        else{
+            MOSI_low;
+        }
+        SCLK_high;
         
-    //     dat<<=1;
-    // }
+        dat<<=1;
+    }
 
 }
 
